@@ -18,10 +18,12 @@ var sourceMap = require('source-map');
 var rawSourceMap = fs.readFileSync(info[1]).toString();
 // sourceMap.SourceMapConsumer;
 sourceMap.SourceMapConsumer.with(rawSourceMap, null, (consumer) => {
-  console.log(
-    consumer.originalPositionFor({
-      line: parseInt(info[2]),
-      column: parseInt(info[3]),
-    })
-  );
+  const result = consumer.originalPositionFor({
+    line: parseInt(info[2]),
+    column: parseInt(info[3]),
+  });
+
+  result.link = `${result.source}:${result.line}:${result.column}`;
+
+  console.log(JSON.stringify(result, null, 2));
 });
