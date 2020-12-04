@@ -1,0 +1,15 @@
+{
+  "name": "source-map-lookup",
+  "version": "0.0.1",
+  "description": "load a source map and point to the original file info by a line and a column",
+  "keywords": [
+    "source-map"
+  ],
+  "bin": "index.js",
+  "main": "index.js",
+  "author": "WadeHuang wadehuang36@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "source-map": "^0.7.3"
+  }
+}
